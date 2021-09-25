@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210925 17:35:57.668" rpa="false" schemaversion="2">
+<suite id="s1" name="Post" source="c:\work\Dio\API\testes\post.robot">
+<test id="s1-t1" name="Enviar Dados para Cadastro Válido">
+<kw name="Enviar Dados para Cadastro" library="services">
+<arg>{"id": 600, "name": "Teste601", "isCompleted": true}</arg>
+<arg>201</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{headers}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Accept=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210925 17:35:57.928" level="INFO">&amp;{headers} = { Content-Type=application/json | Accept=application/json }</msg>
+<status status="PASS" starttime="20210925 17:35:57.927" endtime="20210925 17:35:57.928"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>${base_url}</arg>
+<arg>data=${json}</arg>
+<arg>expected_status=${code}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20210925 17:36:00.462" level="INFO">POST Request : url=https://testeapiqa.azurewebsites.net/api/TodoItems 
+ path_url=/api/TodoItems 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '52'} 
+ body={"id": 600, "name": "Teste601", "isCompleted": true} 
+ </msg>
+<msg timestamp="20210925 17:36:00.463" level="INFO">POST Response : url=https://testeapiqa.azurewebsites.net/api/TodoItems 
+ status=415, reason=Unsupported Media Type 
+ headers={'Content-Length': '175', 'Content-Type': 'application/problem+json; charset=utf-8', 'Server': 'Microsoft-IIS/10.0', 'X-Powered-By': 'ASP.NET', 'Set-Cookie': 'ARRAffinity=6461b2031bd7f08beea38b4037ff8691b9084daa6e55aa934faa2ce233726a33;Path=/;HttpOnly;Secure;Domain=testeapiqa.azurewebsites.net, ARRAffinitySameSite=6461b2031bd7f08beea38b4037ff8691b9084daa6e55aa934faa2ce233726a33;Path=/;HttpOnly;SameSite=None;Secure;Domain=testeapiqa.azurewebsites.net', 'Date': 'Sat, 25 Sep 2021 20:36:00 GMT'} 
+ body={"type":"https://tools.ietf.org/html/rfc7231#section-6.5.13","title":"Unsupported Media Type","status":415,"traceId":"00-2ece2502283bde46930ae93f3fd9bf49-3cd2bb238a2f5b49-00"} 
+ </msg>
+<msg timestamp="20210925 17:36:00.467" level="FAIL">Url: https://testeapiqa.azurewebsites.net/api/TodoItems Expected status: 415 != 201</msg>
+<status status="FAIL" starttime="20210925 17:35:57.928" endtime="20210925 17:36:00.467"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${code}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20210925 17:36:00.468" endtime="20210925 17:36:00.468"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${resp}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20210925 17:36:00.469" endtime="20210925 17:36:00.469"/>
+</kw>
+<status status="FAIL" starttime="20210925 17:35:57.927" endtime="20210925 17:36:00.470"/>
+</kw>
+<kw name="Enviar Dados para Cadastro" library="services">
+<arg>{"id": 601, "name": "Teste602", "isCompleted": true}</arg>
+<arg>201</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{headers}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Accept=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210925 17:36:00.471" level="INFO">&amp;{headers} = { Content-Type=application/json | Accept=application/json }</msg>
+<status status="PASS" starttime="20210925 17:36:00.471" endtime="20210925 17:36:00.471"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>${base_url}</arg>
+<arg>data=${json}</arg>
+<arg>expected_status=${code}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20210925 17:36:00.780" level="INFO">POST Request : url=https://testeapiqa.azurewebsites.net/api/TodoItems 
+ path_url=/api/TodoItems 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '52'} 
+ body={"id": 601, "name": "Teste602", "isCompleted": true} 
+ </msg>
+<msg timestamp="20210925 17:36:00.781" level="INFO">POST Response : url=https://testeapiqa.azurewebsites.net/api/TodoItems 
+ status=415, reason=Unsupported Media Type 
+ headers={'Content-Length': '175', 'Content-Type': 'application/problem+json; charset=utf-8', 'Server': 'Microsoft-IIS/10.0', 'X-Powered-By': 'ASP.NET', 'Set-Cookie': 'ARRAffinity=6461b2031bd7f08beea38b4037ff8691b9084daa6e55aa934faa2ce233726a33;Path=/;HttpOnly;Secure;Domain=testeapiqa.azurewebsites.net, ARRAffinitySameSite=6461b2031bd7f08beea38b4037ff8691b9084daa6e55aa934faa2ce233726a33;Path=/;HttpOnly;SameSite=None;Secure;Domain=testeapiqa.azurewebsites.net', 'Date': 'Sat, 25 Sep 2021 20:36:00 GMT'} 
+ body={"type":"https://tools.ietf.org/html/rfc7231#section-6.5.13","title":"Unsupported Media Type","status":415,"traceId":"00-cbfc82aa3da8cf479e40f9197ef0f567-84d82d72f4bfa641-00"} 
+ </msg>
+<msg timestamp="20210925 17:36:00.781" level="FAIL">Url: https://testeapiqa.azurewebsites.net/api/TodoItems Expected status: 415 != 201</msg>
+<status status="FAIL" starttime="20210925 17:36:00.471" endtime="20210925 17:36:00.781"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${code}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20210925 17:36:00.782" endtime="20210925 17:36:00.782"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${resp}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20210925 17:36:00.782" endtime="20210925 17:36:00.782"/>
+</kw>
+<status status="FAIL" starttime="20210925 17:36:00.470" endtime="20210925 17:36:00.782"/>
+</kw>
+<kw name="Enviar Dados para Cadastro" library="services">
+<arg>{"id": 602, "name": "Teste603", "isCompleted": true}</arg>
+<arg>201</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{headers}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Accept=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210925 17:36:00.784" level="INFO">&amp;{headers} = { Content-Type=application/json | Accept=application/json }</msg>
+<status status="PASS" starttime="20210925 17:36:00.783" endtime="20210925 17:36:00.784"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>${base_url}</arg>
+<arg>data=${json}</arg>
+<arg>expected_status=${code}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20210925 17:36:01.114" level="INFO">POST Request : url=https://testeapiqa.azurewebsites.net/api/TodoItems 
+ path_url=/api/TodoItems 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '52'} 
+ body={"id": 602, "name": "Teste603", "isCompleted": true} 
+ </msg>
+<msg timestamp="20210925 17:36:01.114" level="INFO">POST Response : url=https://testeapiqa.azurewebsites.net/api/TodoItems 
+ status=415, reason=Unsupported Media Type 
+ headers={'Content-Length': '175', 'Content-Type': 'application/problem+json; charset=utf-8', 'Server': 'Microsoft-IIS/10.0', 'X-Powered-By': 'ASP.NET', 'Set-Cookie': 'ARRAffinity=6461b2031bd7f08beea38b4037ff8691b9084daa6e55aa934faa2ce233726a33;Path=/;HttpOnly;Secure;Domain=testeapiqa.azurewebsites.net, ARRAffinitySameSite=6461b2031bd7f08beea38b4037ff8691b9084daa6e55aa934faa2ce233726a33;Path=/;HttpOnly;SameSite=None;Secure;Domain=testeapiqa.azurewebsites.net', 'Date': 'Sat, 25 Sep 2021 20:36:01 GMT'} 
+ body={"type":"https://tools.ietf.org/html/rfc7231#section-6.5.13","title":"Unsupported Media Type","status":415,"traceId":"00-53d3c56def939b4a9a85431c5dcc8891-aa7c72fc4dfb0b4e-00"} 
+ </msg>
+<msg timestamp="20210925 17:36:01.114" level="FAIL">Url: https://testeapiqa.azurewebsites.net/api/TodoItems Expected status: 415 != 201</msg>
+<status status="FAIL" starttime="20210925 17:36:00.784" endtime="20210925 17:36:01.115"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${code}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20210925 17:36:01.115" endtime="20210925 17:36:01.115"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${resp}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20210925 17:36:01.115" endtime="20210925 17:36:01.115"/>
+</kw>
+<status status="FAIL" starttime="20210925 17:36:00.783" endtime="20210925 17:36:01.115"/>
+</kw>
+<status status="FAIL" starttime="20210925 17:35:57.926" endtime="20210925 17:36:01.116">Several failures occurred:
+
+1) Url: https://testeapiqa.azurewebsites.net/api/TodoItems Expected status: 415 != 201
+
+2) Url: https://testeapiqa.azurewebsites.net/api/TodoItems Expected status: 415 != 201
+
+3) Url: https://testeapiqa.azurewebsites.net/api/TodoItems Expected status: 415 != 201</status>
+</test>
+<test id="s1-t2" name="Enviar Dados para Cadastro Inválido">
+<kw name="Enviar Dados para Cadastro" library="services">
+<arg>{"id": xx, "name": Teste601, "isCompleted": none}</arg>
+<arg>415</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{headers}</var>
+<arg>Content-Type=application/json</arg>
+<arg>Accept=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20210925 17:36:01.118" level="INFO">&amp;{headers} = { Content-Type=application/json | Accept=application/json }</msg>
+<status status="PASS" starttime="20210925 17:36:01.118" endtime="20210925 17:36:01.118"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${resp}</var>
+<arg>${base_url}</arg>
+<arg>data=${json}</arg>
+<arg>expected_status=${code}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20210925 17:36:01.427" level="INFO">POST Request : url=https://testeapiqa.azurewebsites.net/api/TodoItems 
+ path_url=/api/TodoItems 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '49'} 
+ body={"id": xx, "name": Teste601, "isCompleted": none} 
+ </msg>
+<msg timestamp="20210925 17:36:01.427" level="INFO">POST Response : url=https://testeapiqa.azurewebsites.net/api/TodoItems 
+ status=415, reason=Unsupported Media Type 
+ headers={'Content-Length': '175', 'Content-Type': 'application/problem+json; charset=utf-8', 'Server': 'Microsoft-IIS/10.0', 'X-Powered-By': 'ASP.NET', 'Set-Cookie': 'ARRAffinity=6461b2031bd7f08beea38b4037ff8691b9084daa6e55aa934faa2ce233726a33;Path=/;HttpOnly;Secure;Domain=testeapiqa.azurewebsites.net, ARRAffinitySameSite=6461b2031bd7f08beea38b4037ff8691b9084daa6e55aa934faa2ce233726a33;Path=/;HttpOnly;SameSite=None;Secure;Domain=testeapiqa.azurewebsites.net', 'Date': 'Sat, 25 Sep 2021 20:36:01 GMT'} 
+ body={"type":"https://tools.ietf.org/html/rfc7231#section-6.5.13","title":"Unsupported Media Type","status":415,"traceId":"00-80785ae1515e3343b9a8553c074a66c5-2eda36d70f9b0441-00"} 
+ </msg>
+<msg timestamp="20210925 17:36:01.428" level="INFO">${resp} = &lt;Response [415]&gt;</msg>
+<status status="PASS" starttime="20210925 17:36:01.118" endtime="20210925 17:36:01.428"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${resp.status_code}</arg>
+<arg>${code}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210925 17:36:01.428" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210925 17:36:01.428" endtime="20210925 17:36:01.428"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${resp}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20210925 17:36:01.429" level="INFO">&lt;Response [415]&gt;</msg>
+<status status="PASS" starttime="20210925 17:36:01.428" endtime="20210925 17:36:01.429"/>
+</kw>
+<status status="PASS" starttime="20210925 17:36:01.118" endtime="20210925 17:36:01.429"/>
+</kw>
+<status status="PASS" starttime="20210925 17:36:01.117" endtime="20210925 17:36:01.429"/>
+</test>
+<status status="FAIL" starttime="20210925 17:35:57.670" endtime="20210925 17:36:01.431"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="Post">Post</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
